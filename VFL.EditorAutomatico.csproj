@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>VFL.EditorAutomatico</AssemblyName>
+    <RootNamespace>VFL.EditorAutomatico</RootNamespace>
+    <ApplicationIcon>Assets\app-icon.ico</ApplicationIcon>
+    <Version>1.0.0</Version>
+    <InformationalVersion>1.0.0</InformationalVersion>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
+    <AssemblyTitle>VFL Editor Automático</AssemblyTitle>
+    <Product>VFL Editor Automático</Product>
+    <Company>VFL</Company>
+    <Description>Editor automático para detectar e reduzir silêncios em vídeos.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="tests\**\*.cs" />
+    <Content Include="Assets\app-icon.ico" Link="VFL-Editor-Automatico.ico" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Tools\**\*" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="README.md" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="LICENSE.md" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="FFMPEG-NOTICE.md" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="THIRD-PARTY-FFMPEG-LICENSE.txt" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
