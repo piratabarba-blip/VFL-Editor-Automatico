@@ -70,7 +70,7 @@ internal sealed class MainForm : Form
         topbar.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
         topbar.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 350));
 
-        topbar.Controls.Add(CreateBrand("VFL Editor Automático", "v1.1"), 0, 0);
+        topbar.Controls.Add(CreateBrand("VFL Editor Automático", "CORTE DE SILÊNCIOS  •  v1.1"), 0, 0);
 
         _selectVideo.Dock = DockStyle.Fill; _selectVideo.Margin = new Padding(12, 5, 12, 5);
         topbar.Controls.Add(_selectVideo, 1, 0);
@@ -197,16 +197,16 @@ internal sealed class MainForm : Form
         Font = new Font("Segoe UI Semibold", 9), TextAlign = ContentAlignment.MiddleLeft
     };
 
-    private Control CreateBrand(string title, string version)
+    private Control CreateBrand(string title, string badge)
     {
-        var brand = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 2, Tag = "header", Margin = Padding.Empty };
-        brand.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 48)); brand.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));
+        var brand = new Panel { Dock = DockStyle.Fill, Tag = "header", Margin = Padding.Empty };
         var logoPath = Path.Combine(AppContext.BaseDirectory, "Assets", "vfl-suite-logo.png");
         Control mark = File.Exists(logoPath)
-            ? new PictureBox { Image = Image.FromFile(logoPath), SizeMode = PictureBoxSizeMode.Zoom, Dock = DockStyle.Fill, Margin = new Padding(0, 0, 8, 0) }
-            : new Label { Text = "V", Dock = DockStyle.Fill, BackColor = Theme.Primary, Tag = "accent", TextAlign = ContentAlignment.MiddleCenter, Font = new Font("Segoe UI Black", 15), Margin = new Padding(0, 0, 8, 0) };
-        brand.Controls.Add(mark, 0, 0);
-        brand.Controls.Add(new Label { Text = $"{title}  •  {version}", Dock = DockStyle.Fill, TextAlign = ContentAlignment.MiddleLeft, Font = new Font("Segoe UI Semibold", 11.5f), Margin = Padding.Empty }, 1, 0);
+            ? new PictureBox { Image = Image.FromFile(logoPath), SizeMode = PictureBoxSizeMode.Zoom, Location = new Point(0, 5), Size = new Size(44, 44) }
+            : new Label { Text = "V", Location = new Point(0, 5), Size = new Size(44, 44), BackColor = Theme.Primary, Tag = "accent", TextAlign = ContentAlignment.MiddleCenter, Font = new Font("Segoe UI Black", 15) };
+        brand.Controls.Add(mark);
+        brand.Controls.Add(new Label { Text = title, Location = new Point(50, 3), Size = new Size(235, 25), Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right, TextAlign = ContentAlignment.BottomLeft, Font = new Font("Segoe UI Semibold", 11.5f), Margin = Padding.Empty });
+        brand.Controls.Add(new Label { Text = badge, Location = new Point(50, 29), Size = new Size(235, 16), Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right, Tag = "brand-badge", TextAlign = ContentAlignment.TopLeft, Font = new Font("Segoe UI Semibold", 6.8f), Margin = Padding.Empty });
         return brand;
     }
 
