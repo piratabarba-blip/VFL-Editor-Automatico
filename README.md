@@ -2,11 +2,12 @@
 
 Aplicativo Windows que detecta pausas no áudio, remove o centro dos silêncios longos e preserva uma pequena respiração para manter o ritmo natural da fala.
 
-![Interface do VFL Editor Automático](docs/interface-v1.0.png)
+![Interface do VFL Editor Automático](docs/interface-v1.1.png)
 
 ## Principais recursos
 
 - Detecção automática de silêncios no áudio.
+- Interface profissional em três áreas: ajustes, mapa de cortes e exportação.
 - Presets de corte **Suave**, **Normal** e **Agressivo**.
 - Ajustes de sensibilidade, pausa mínima, pausa restante e margem da fala.
 - Linha do tempo indicando os trechos mantidos e removidos.
