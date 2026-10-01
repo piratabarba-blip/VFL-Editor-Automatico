@@ -19,6 +19,7 @@
   <ItemGroup>
     <Compile Remove="tests\**\*.cs" />
     <Content Include="Assets\app-icon.ico" Link="VFL-Editor-Automatico.ico" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Assets\vfl-suite-logo.png" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="Tools\**\*" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="README.md" CopyToPublishDirectory="PreserveNewest" />
     <Content Include="LICENSE.md" CopyToPublishDirectory="PreserveNewest" />
